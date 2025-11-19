@@ -1,0 +1,106 @@
+---
+export interface Props {
+	title: string;
+	description: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content={description} />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		
+		<!-- Fuentes futuristas -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+		
+		<title>{title}</title>
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>
+
+<style is:global>
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+
+	:root {
+		--neon-blue: #00d4ff;
+		--neon-green: #00ff88;
+		--dark-bg: #0a0a0a;
+		--glass-bg: rgba(255, 255, 255, 0.05);
+		--glass-border: rgba(255, 255, 255, 0.1);
+	}
+
+	html {
+		scroll-behavior: smooth;
+	}
+
+	body {
+		font-family: 'Poppins', sans-serif;
+		background: var(--dark-bg);
+		color: white;
+		overflow-x: hidden;
+		line-height: 1.6;
+	}
+
+	.orbitron {
+		font-family: 'Orbitron', monospace;
+	}
+
+	.exo {
+		font-family: 'Exo 2', sans-serif;
+	}
+
+	.glass {
+		background: var(--glass-bg);
+		backdrop-filter: blur(10px);
+		border: 1px solid var(--glass-border);
+		border-radius: 16px;
+	}
+
+	.neon-text {
+		text-shadow: 0 0 10px var(--neon-blue), 0 0 20px var(--neon-blue), 0 0 30px var(--neon-blue);
+	}
+
+	.gradient-bg {
+		background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+	}
+
+	.animated-gradient {
+		background: linear-gradient(-45deg, #0a0a0a, #1a1a2e, #16213e, #0f3460);
+		background-size: 400% 400%;
+		animation: gradientShift 15s ease infinite;
+	}
+
+	@keyframes gradientShift {
+		0% { background-position: 0% 50%; }
+		50% { background-position: 100% 50%; }
+		100% { background-position: 0% 50%; }
+	}
+
+	.hover-glow:hover {
+		box-shadow: 0 0 20px var(--neon-blue);
+		transform: translateY(-2px);
+		transition: all 0.3s ease;
+	}
+
+	.section {
+		min-height: 100vh;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 2rem;
+	}
+</style>

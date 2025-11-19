@@ -1,0 +1,195 @@
+---
+---
+
+<section id="proyectos" class="projects">
+	<div class="container">
+		<h2 class="section-title">Proyectos</h2>
+		<div class="projects-grid">
+			<a href="https://music-free.up.railway.app" target="_blank" class="project-card">
+				<div class="project-image">
+					<img src="/music.svg" alt="App de Música" />
+				</div>
+				<div class="project-content">
+					<h3>App de Música</h3>
+					<p>Aplicación web de música desarrollada con Python FastAPI, HTML, CSS y TailwindCSS. Interfaz moderna y responsiva para gestión de música.</p>
+					<div class="project-tech">
+						<span class="tech-tag">Python</span>
+						<span class="tech-tag">FastAPI</span>
+						<span class="tech-tag">HTML/CSS</span>
+						<span class="tech-tag">TailwindCSS</span>
+					</div>
+				</div>
+			</a>
+		</div>
+	</div>
+</section>
+
+<style>
+	.projects {
+		padding: 6rem 2rem;
+		background: linear-gradient(135deg, 
+			rgba(0, 0, 0, 0.8) 0%, 
+			rgba(0, 255, 136, 0.08) 50%, 
+			rgba(0, 0, 0, 0.8) 100%);
+	}
+
+	.container {
+		max-width: 1200px;
+		margin: 0 auto;
+	}
+
+	.section-title {
+		font-family: 'Orbitron', monospace;
+		font-size: 2.5rem;
+		font-weight: 700;
+		text-align: center;
+		margin-bottom: 3rem;
+		background: linear-gradient(45deg, var(--neon-magenta), var(--neon-blue));
+		background-size: 200% 200%;
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-clip: text;
+		animation: gradient-flow 3s ease infinite;
+		filter: drop-shadow(0 0 15px rgba(0, 245, 255, 0.4));
+	}
+
+	.section-title::after {
+		content: '';
+		position: absolute;
+		bottom: -15px;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 120px;
+		height: 3px;
+		background: linear-gradient(45deg, var(--neon-magenta), var(--neon-blue));
+		border-radius: 2px;
+		animation: gradient-flow 3s ease infinite;
+	}
+
+	.projects-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(280px, 360px));
+		justify-content: center;
+		gap: 2rem;
+		margin-top: 3rem;
+	}
+
+	.project-card {
+		background: var(--glass-bg);
+		backdrop-filter: blur(20px) saturate(180%);
+		border: 1px solid var(--glass-border);
+		border-radius: 20px;
+		overflow: hidden;
+		transition: all 0.4s ease;
+		position: relative;
+		text-decoration: none;
+		color: inherit;
+		display: block;
+		width: 100%;
+		max-width: 360px;
+		margin: 0 auto;
+	}
+
+	.project-card::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		height: 2px;
+		background: linear-gradient(90deg, var(--neon-magenta), var(--neon-blue));
+		opacity: 0;
+		transition: opacity 0.3s ease;
+	}
+
+	.project-card:hover::before {
+		opacity: 1;
+	}
+
+	.project-card:hover {
+		transform: translateY(-8px);
+		border-color: var(--cyber-cyan);
+		box-shadow: 
+			0 15px 40px rgba(0, 245, 255, 0.25),
+			0 0 30px rgba(0, 123, 255, 0.15);
+	}
+
+	.project-image {
+		height: auto;
+		min-height: 200px;
+		background: linear-gradient(135deg, rgba(255, 0, 204, 0.1), rgba(0, 123, 255, 0.1));
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 1rem;
+	}
+
+	.project-image img {
+		max-width: 100%;
+		height: auto;
+		object-fit: contain;
+		filter: drop-shadow(0 0 10px var(--cyber-cyan));
+	}
+
+	.project-content {
+		padding: 2rem;
+	}
+
+	.project-content h3 {
+		font-family: 'Exo 2', sans-serif;
+		font-size: 1.5rem;
+		font-weight: 600;
+		margin-bottom: 1rem;
+		color: white;
+		background: linear-gradient(45deg, var(--neon-magenta), var(--neon-blue));
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-clip: text;
+	}
+
+	.project-content p {
+		color: rgba(255, 255, 255, 0.8);
+		line-height: 1.6;
+		margin-bottom: 1.5rem;
+	}
+
+	.project-tech {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5rem;
+	}
+
+	.tech-tag {
+		background: rgba(0, 245, 255, 0.1);
+		border: 1px solid rgba(0, 245, 255, 0.3);
+		color: var(--cyber-cyan);
+		padding: 0.3rem 0.8rem;
+		border-radius: 15px;
+		font-size: 0.8rem;
+		font-weight: 500;
+	}
+
+	@keyframes gradient-flow {
+		0%, 100% { background-position: 0% 50%; }
+		50% { background-position: 100% 50%; }
+	}
+
+	@media (max-width: 768px) {
+		.projects {
+			padding: 4rem 1rem;
+		}
+		
+		.section-title {
+			font-size: 2rem;
+		}
+		
+		.projects-grid {
+			grid-template-columns: 1fr;
+			gap: 1.5rem;
+		}
+		
+		.project-content {
+			padding: 1.5rem;
+		}
+	}
+</style>
