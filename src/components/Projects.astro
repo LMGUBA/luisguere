@@ -1,17 +1,26 @@
 ---
+
 ---
 
 <section id="proyectos" class="projects">
 	<div class="container">
-		<h2 class="section-title">Proyectos</h2>
+		<h2 class="section-title animate-on-scroll">Proyectos</h2>
 		<div class="projects-grid">
-			<a href="https://music-free.up.railway.app" target="_blank" class="project-card">
+			<a
+				href="https://music-free.up.railway.app"
+				target="_blank"
+				class="project-card"
+			>
 				<div class="project-image">
 					<img src="/music.svg" alt="App de Música" />
 				</div>
 				<div class="project-content">
 					<h3>App de Música</h3>
-					<p>Aplicación web de música desarrollada con Python FastAPI, HTML, CSS y TailwindCSS. Interfaz moderna y responsiva para gestión de música.</p>
+					<p>
+						Aplicación web de música desarrollada con Python
+						FastAPI, HTML, CSS y TailwindCSS. Interfaz moderna y
+						responsiva para gestión de música.
+					</p>
 					<div class="project-tech">
 						<span class="tech-tag">Python</span>
 						<span class="tech-tag">FastAPI</span>
@@ -26,11 +35,8 @@
 
 <style>
 	.projects {
-		padding: 6rem 2rem;
-		background: linear-gradient(135deg, 
-			rgba(0, 0, 0, 0.8) 0%, 
-			rgba(0, 255, 136, 0.08) 50%, 
-			rgba(0, 0, 0, 0.8) 100%);
+		padding: 8rem 2rem;
+		background: var(--bg-color);
 	}
 
 	.container {
@@ -39,157 +45,145 @@
 	}
 
 	.section-title {
-		font-family: 'Orbitron', monospace;
-		font-size: 2.5rem;
+		font-family: var(--font-main);
+		font-size: 3.5rem;
 		font-weight: 700;
 		text-align: center;
-		margin-bottom: 3rem;
-		background: linear-gradient(45deg, var(--neon-magenta), var(--neon-blue));
-		background-size: 200% 200%;
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-clip: text;
-		animation: gradient-flow 3s ease infinite;
-		filter: drop-shadow(0 0 15px rgba(0, 245, 255, 0.4));
-	}
-
-	.section-title::after {
-		content: '';
-		position: absolute;
-		bottom: -15px;
-		left: 50%;
-		transform: translateX(-50%);
-		width: 120px;
-		height: 3px;
-		background: linear-gradient(45deg, var(--neon-magenta), var(--neon-blue));
-		border-radius: 2px;
-		animation: gradient-flow 3s ease infinite;
+		margin-bottom: 5rem;
+		color: var(--text-primary);
+		letter-spacing: -0.02em;
 	}
 
 	.projects-grid {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(280px, 360px));
+		grid-template-columns: repeat(auto-fit, minmax(320px, 380px));
 		justify-content: center;
-		gap: 2rem;
-		margin-top: 3rem;
+		gap: 3rem;
 	}
 
 	.project-card {
-		background: var(--glass-bg);
-		backdrop-filter: blur(20px) saturate(180%);
+		background: var(--bg-color);
 		border: 1px solid var(--glass-border);
-		border-radius: 20px;
+		border-radius: 0; /* Sharp corners */
 		overflow: hidden;
-		transition: all 0.4s ease;
+		transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 		position: relative;
 		text-decoration: none;
 		color: inherit;
-		display: block;
-		width: 100%;
-		max-width: 360px;
-		margin: 0 auto;
-	}
-
-	.project-card::before {
-		content: '';
-		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-		height: 2px;
-		background: linear-gradient(90deg, var(--neon-magenta), var(--neon-blue));
-		opacity: 0;
-		transition: opacity 0.3s ease;
-	}
-
-	.project-card:hover::before {
-		opacity: 1;
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+		box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
 	}
 
 	.project-card:hover {
-		transform: translateY(-8px);
-		border-color: var(--cyber-cyan);
-		box-shadow: 
-			0 15px 40px rgba(0, 245, 255, 0.25),
-			0 0 30px rgba(0, 123, 255, 0.15);
+		transform: translateY(-4px);
+		box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+		border-color: var(--text-primary);
 	}
 
 	.project-image {
-		height: auto;
-		min-height: 200px;
-		background: linear-gradient(135deg, rgba(255, 0, 204, 0.1), rgba(0, 123, 255, 0.1));
+		height: 280px; /* Increased height */
+		background: #fbfbfd; /* Apple-like very light gray */
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		padding: 1rem;
+		padding: 0; /* No padding for edge-to-edge */
+		border-bottom: 1px solid var(--glass-border);
+		overflow: hidden;
+	}
+
+	@media (prefers-color-scheme: dark) {
+		.project-image {
+			background: #1c1c1e;
+		}
 	}
 
 	.project-image img {
-		max-width: 100%;
-		height: auto;
-		object-fit: contain;
-		filter: drop-shadow(0 0 10px var(--cyber-cyan));
+		width: 100%; /* Fill width */
+		height: 100%; /* Fill height */
+		max-height: none; /* Remove max-height restriction */
+		object-fit: contain; /* Contain to show full image */
+		filter: none;
+		transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+	}
+
+	.project-card:hover .project-image img {
+		transform: scale(1.03);
 	}
 
 	.project-content {
-		padding: 2rem;
+		padding: 2.5rem;
+		flex-grow: 1;
+		display: flex;
+		flex-direction: column;
 	}
 
 	.project-content h3 {
-		font-family: 'Exo 2', sans-serif;
+		font-family: var(--font-main);
 		font-size: 1.5rem;
 		font-weight: 600;
-		margin-bottom: 1rem;
-		color: white;
-		background: linear-gradient(45deg, var(--neon-magenta), var(--neon-blue));
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-clip: text;
+		margin-bottom: 0.8rem;
+		color: var(--text-primary);
+		letter-spacing: -0.01em;
 	}
 
 	.project-content p {
-		color: rgba(255, 255, 255, 0.8);
+		color: var(--text-secondary);
 		line-height: 1.6;
-		margin-bottom: 1.5rem;
+		margin-bottom: 2rem;
+		font-size: 1rem;
+		font-weight: 400;
+		flex-grow: 1;
 	}
 
 	.project-tech {
 		display: flex;
 		flex-wrap: wrap;
-		gap: 0.5rem;
+		gap: 0.6rem;
+		margin-top: auto;
 	}
 
 	.tech-tag {
-		background: rgba(0, 245, 255, 0.1);
-		border: 1px solid rgba(0, 245, 255, 0.3);
-		color: var(--cyber-cyan);
-		padding: 0.3rem 0.8rem;
-		border-radius: 15px;
-		font-size: 0.8rem;
+		background: transparent;
+		border: 1px solid var(--glass-border);
+		color: var(--text-secondary);
+		padding: 0.4rem 0.8rem;
+		border-radius: 0; /* Sharp corners */
+		font-size: 0.75rem;
 		font-weight: 500;
+		transition: all 0.2s ease;
+		letter-spacing: 0.02em;
 	}
 
-	@keyframes gradient-flow {
-		0%, 100% { background-position: 0% 50%; }
-		50% { background-position: 100% 50%; }
+	@media (prefers-color-scheme: dark) {
+		.tech-tag {
+			border-color: rgba(255, 255, 255, 0.2);
+		}
+	}
+
+	.project-card:hover .tech-tag {
+		border-color: var(--text-primary);
+		color: var(--text-primary);
 	}
 
 	@media (max-width: 768px) {
 		.projects {
-			padding: 4rem 1rem;
+			padding: 5rem 1.5rem;
 		}
-		
+
 		.section-title {
-			font-size: 2rem;
+			font-size: 2.5rem;
+			margin-bottom: 3rem;
 		}
-		
+
 		.projects-grid {
 			grid-template-columns: 1fr;
-			gap: 1.5rem;
+			gap: 2rem;
 		}
-		
+
 		.project-content {
-			padding: 1.5rem;
+			padding: 2rem;
 		}
 	}
 </style>

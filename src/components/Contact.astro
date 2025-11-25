@@ -1,24 +1,41 @@
 ---
-import LinkedInIcon from './LinkedInIcon.astro';
-import GitHubIcon from './GitHubIcon.astro';
-import GmailIcon from './GmailIcon.astro';
-import WhatsAppIcon from './WhatsAppIcon.astro';
+import LinkedInIcon from "./LinkedInIcon.astro";
+import GitHubIcon from "./GitHubIcon.astro";
+import GmailIcon from "./GmailIcon.astro";
+import WhatsAppIcon from "./WhatsAppIcon.astro";
 ---
 
 <section id="contacto" class="contact">
 	<div class="container">
-		<h2 class="section-title">Contacto</h2>
+		<h2 class="section-title animate-on-scroll">Contacto</h2>
 		<div class="contact-content">
 			<div class="contact-form">
 				<form class="form" id="contactForm">
 					<div class="form-group">
-						<input type="text" id="nombre" placeholder="Nombre" class="form-input" required>
+						<input
+							type="text"
+							id="nombre"
+							placeholder="Nombre"
+							class="form-input"
+							required
+						/>
 					</div>
 					<div class="form-group">
-						<input type="email" id="email" placeholder="Email" class="form-input" required>
+						<input
+							type="email"
+							id="email"
+							placeholder="Email"
+							class="form-input"
+							required
+						/>
 					</div>
 					<div class="form-group">
-						<textarea id="mensaje" placeholder="Mensaje" class="form-textarea" rows="5" required></textarea>
+						<textarea
+							id="mensaje"
+							placeholder="Mensaje"
+							class="form-textarea"
+							rows="5"
+							required></textarea>
 					</div>
 					<button type="submit" class="submit-btn">
 						<WhatsAppIcon size="20" />
@@ -29,25 +46,40 @@ import WhatsAppIcon from './WhatsAppIcon.astro';
 			<div class="social-links">
 				<h3>Conecta Conmigo</h3>
 				<div class="social-grid">
-					<a href="mailto:guerebalvin.consultor@gmail.com" class="social-link">
+					<a
+						href="mailto:guerebalvin.consultor@gmail.com"
+						class="social-link"
+					>
 						<div class="social-icon">
 							<GmailIcon size="24" />
 						</div>
 						<span>Email</span>
 					</a>
-					<a href="https://www.linkedin.com/in/luismiguelguerebalvin/" class="social-link" target="_blank">
+					<a
+						href="https://www.linkedin.com/in/luismiguelguerebalvin/"
+						class="social-link"
+						target="_blank"
+					>
 						<div class="social-icon">
 							<LinkedInIcon size="24" />
 						</div>
 						<span>LinkedIn</span>
 					</a>
-					<a href="https://github.com/LMGUBA" class="social-link" target="_blank">
+					<a
+						href="https://github.com/LMGUBA"
+						class="social-link"
+						target="_blank"
+					>
 						<div class="social-icon">
 							<GitHubIcon size="24" />
 						</div>
 						<span>GitHub</span>
 					</a>
-					<a href="https://wa.me/51945092299" class="social-link" target="_blank">
+					<a
+						href="https://wa.me/51945092299"
+						class="social-link"
+						target="_blank"
+					>
 						<div class="social-icon">
 							<WhatsAppIcon size="24" />
 						</div>
@@ -62,10 +94,7 @@ import WhatsAppIcon from './WhatsAppIcon.astro';
 <style>
 	.contact {
 		padding: 6rem 2rem;
-		background: linear-gradient(135deg, 
-			rgba(0, 0, 0, 0.9) 0%, 
-			rgba(0, 255, 136, 0.12) 50%, 
-			rgba(0, 0, 0, 0.9) 100%);
+		background: var(--bg-color);
 		min-height: 100vh;
 		display: flex;
 		align-items: center;
@@ -78,16 +107,13 @@ import WhatsAppIcon from './WhatsAppIcon.astro';
 	}
 
 	.section-title {
-		font-family: 'Orbitron', monospace;
-		font-size: 2.5rem;
+		font-family: var(--font-main);
+		font-size: 3rem;
 		font-weight: 700;
 		text-align: center;
-		margin-bottom: 3rem;
-		color: #00f5ff !important;
-		opacity: 1 !important;
-		visibility: visible !important;
-		display: block !important;
-		text-shadow: 0 0 20px rgba(0, 245, 255, 0.6);
+		margin-bottom: 4rem;
+		color: var(--text-primary);
+		letter-spacing: -0.02em;
 	}
 
 	.contact-content {
@@ -99,9 +125,9 @@ import WhatsAppIcon from './WhatsAppIcon.astro';
 
 	.contact-form {
 		background: var(--glass-bg);
-		backdrop-filter: blur(15px);
+		backdrop-filter: blur(20px);
 		border: 1px solid var(--glass-border);
-		border-radius: 20px;
+		border-radius: 0; /* Sharp corners */
 		padding: 2.5rem;
 	}
 
@@ -109,27 +135,36 @@ import WhatsAppIcon from './WhatsAppIcon.astro';
 		margin-bottom: 1.5rem;
 	}
 
-	.form-input, .form-textarea {
+	.form-input,
+	.form-textarea {
 		width: 100%;
 		padding: 1rem;
-		background: rgba(255, 255, 255, 0.05);
+		background: rgba(0, 0, 0, 0.03);
 		border: 1px solid var(--glass-border);
-		border-radius: 10px;
-		color: white;
-		font-family: 'Poppins', sans-serif;
+		border-radius: 0; /* Sharp corners */
+		color: var(--text-primary);
+		font-family: var(--font-main);
 		font-size: 1rem;
 		transition: all 0.3s ease;
 	}
 
-	.form-input:focus, .form-textarea:focus {
-		outline: none;
-		border-color: var(--neon-green);
-		box-shadow: 0 0 15px rgba(0, 255, 136, 0.3);
-		background: rgba(255, 255, 255, 0.08);
+	@media (prefers-color-scheme: dark) {
+		.form-input,
+		.form-textarea {
+			background: rgba(255, 255, 255, 0.05);
+		}
 	}
 
-	.form-input::placeholder, .form-textarea::placeholder {
-		color: rgba(255, 255, 255, 0.5);
+	.form-input:focus,
+	.form-textarea:focus {
+		outline: none;
+		border-color: var(--text-primary);
+		background: transparent;
+	}
+
+	.form-input::placeholder,
+	.form-textarea::placeholder {
+		color: var(--text-secondary);
 	}
 
 	.submit-btn {
@@ -139,37 +174,21 @@ import WhatsAppIcon from './WhatsAppIcon.astro';
 		justify-content: center;
 		gap: 0.5rem;
 		padding: 1rem 2rem;
-		background: linear-gradient(45deg, var(--neon-magenta), var(--neon-blue));
-		border: none;
-		border-radius: 10px;
-		color: white;
-		font-family: 'Exo 2', sans-serif;
-		font-size: 1.1rem;
-		font-weight: 600;
+		background: var(--text-primary);
+		border: 1px solid var(--text-primary);
+		border-radius: 0; /* Sharp corners */
+		color: var(--bg-color);
+		font-family: var(--font-main);
+		font-size: 1rem;
+		font-weight: 500;
 		cursor: pointer;
 		transition: all 0.3s ease;
-		position: relative;
-		overflow: hidden;
-	}
-
-	.submit-btn::before {
-		content: '';
-		position: absolute;
-		top: 0;
-		left: -100%;
-		width: 100%;
-		height: 100%;
-		background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-		transition: left 0.5s ease;
-	}
-
-	.submit-btn:hover::before {
-		left: 100%;
 	}
 
 	.submit-btn:hover {
+		background: transparent;
+		color: var(--text-primary);
 		transform: translateY(-2px);
-		box-shadow: 0 10px 25px rgba(0, 162, 255, 0.35);
 	}
 
 	.social-links {
@@ -177,17 +196,17 @@ import WhatsAppIcon from './WhatsAppIcon.astro';
 	}
 
 	.social-links h3 {
-		font-family: 'Exo 2', sans-serif;
+		font-family: var(--font-main);
 		font-size: 1.5rem;
 		font-weight: 600;
 		margin-bottom: 2rem;
-		color: var(--neon-blue);
+		color: var(--text-primary);
 	}
 
 	.social-grid {
 		display: flex;
 		flex-direction: column;
-		gap: 1.5rem;
+		gap: 1rem;
 	}
 
 	.social-link {
@@ -197,62 +216,29 @@ import WhatsAppIcon from './WhatsAppIcon.astro';
 		gap: 1rem;
 		padding: 1rem 2rem;
 		background: var(--glass-bg);
-		backdrop-filter: blur(20px) saturate(180%);
+		backdrop-filter: blur(20px);
 		border: 1px solid var(--glass-border);
-		border-radius: 15px;
-		color: white;
+		border-radius: 0; /* Sharp corners */
+		color: var(--text-primary);
 		text-decoration: none;
-		transition: all 0.4s ease;
-		position: relative;
-		overflow: hidden;
-	}
-
-	.social-link::before {
-		content: '';
-		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-		height: 2px;
-		background: linear-gradient(90deg, var(--neon-magenta), var(--neon-blue));
-		opacity: 0;
-		transition: opacity 0.3s ease;
-	}
-
-	.social-link::after {
-		content: '';
-		position: absolute;
-		top: 0;
-		left: -100%;
-		width: 100%;
-		height: 100%;
-		background: linear-gradient(90deg, transparent, rgba(0, 245, 255, 0.1), transparent);
-		transition: left 0.6s ease;
-	}
-
-	.social-link:hover::before {
-		opacity: 1;
-	}
-
-	.social-link:hover::after {
-		left: 100%;
+		transition: all 0.3s ease;
 	}
 
 	.social-link:hover {
-		transform: translateY(-8px);
-		border-color: var(--cyber-cyan);
-		box-shadow: 
-			0 15px 40px rgba(0, 245, 255, 0.25),
-			0 0 30px rgba(0, 255, 136, 0.15);
+		transform: translateY(-2px);
+		border-color: var(--text-primary);
+		background: var(--text-primary);
+		color: var(--bg-color);
 	}
 
 	.social-icon {
 		font-size: 1.5rem;
-		filter: drop-shadow(0 0 10px var(--neon-blue));
+		display: flex;
+		align-items: center;
 	}
 
 	.social-link span {
-		font-family: 'Exo 2', sans-serif;
+		font-family: var(--font-main);
 		font-weight: 500;
 	}
 
@@ -260,20 +246,21 @@ import WhatsAppIcon from './WhatsAppIcon.astro';
 		.contact {
 			padding: 4rem 1rem;
 		}
-		
+
 		.section-title {
-			font-size: 2rem;
+			font-size: 2.2rem;
+			margin-bottom: 3rem;
 		}
-		
+
 		.contact-content {
 			grid-template-columns: 1fr;
-			gap: 2rem;
+			gap: 3rem;
 		}
-		
+
 		.contact-form {
 			padding: 2rem;
 		}
-		
+
 		.social-grid {
 			flex-direction: row;
 			justify-content: center;
@@ -286,46 +273,23 @@ import WhatsAppIcon from './WhatsAppIcon.astro';
 			padding: 5rem 1.5rem;
 		}
 
-		.section-title {
-			font-size: 2.2rem;
-		}
-
 		.contact-content {
-			grid-template-columns: 1fr;
 			gap: 3rem;
-		}
-
-		.contact-form {
-			padding: 2rem;
-		}
-
-		.form-input, .form-textarea {
-			font-size: 1rem;
-		}
-
-		.submit-btn {
-			font-size: 1.05rem;
-			padding: 1rem 1.8rem;
-		}
-
-		.social-grid {
-			flex-direction: row;
-			gap: 1rem;
-			justify-content: center;
-			flex-wrap: wrap;
 		}
 	}
 </style>
 
 <script>
-document.getElementById('contactForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    const nombre = document.getElementById('nombre').value;
-    const email = document.getElementById('email').value;
-    const mensaje = document.getElementById('mensaje').value;
-    
-    const texto = `*NUEVO CONTACTO DESDE PORTAFOLIO*
+	document
+		.getElementById("contactForm")
+		.addEventListener("submit", function (e) {
+			e.preventDefault();
+
+			const nombre = document.getElementById("nombre").value;
+			const email = document.getElementById("email").value;
+			const mensaje = document.getElementById("mensaje").value;
+
+			const texto = `*NUEVO CONTACTO DESDE PORTAFOLIO*
 
 *Nombre:* ${nombre}
 *Email:* ${email}
@@ -334,9 +298,9 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
 ${mensaje}
 
 _Enviado desde tu portafolio web_`;
-    
-    const url = `https://wa.me/51945092299?text=${encodeURIComponent(texto)}`;
-    
-    window.open(url, '_blank');
-});
+
+			const url = `https://wa.me/51945092299?text=${encodeURIComponent(texto)}`;
+
+			window.open(url, "_blank");
+		});
 </script>

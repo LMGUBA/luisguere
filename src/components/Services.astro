@@ -1,42 +1,70 @@
 ---
-import AndroidIcon from './AndroidIcon.astro';
+import AndroidIcon from "./AndroidIcon.astro";
 ---
 
 <section id="servicios" class="services">
 	<div class="container">
-		<h2 class="section-title">Servicios</h2>
+		<h2 class="section-title animate-on-scroll">Servicios</h2>
 		<div class="services-grid">
 			<div class="service-card glass">
-				<div class="service-icon">🤖</div>
+				<div class="service-icon">
+					<div class="icon-circle">ML</div>
+				</div>
 				<h3>Machine Learning</h3>
-				<p>Desarrollo de algoritmos inteligentes en Python para análisis predictivo y automatización de procesos.</p>
-			</div>
-			<div class="service-card glass">
-				<div class="service-icon">🌐</div>
-				<h3>Desarrollo Web Flask y Astro</h3>
-				<p>Aplicaciones web modernas y rápidas utilizando Flask para backend y Astro para frontend estático.</p>
+				<p>
+					Desarrollo de algoritmos inteligentes en Python para
+					análisis predictivo y automatización de procesos.
+				</p>
 			</div>
 			<div class="service-card glass">
 				<div class="service-icon">
-					<AndroidIcon size="48" />
+					<div class="icon-circle">WEB</div>
+				</div>
+				<h3>Desarrollo Web Flask y Astro</h3>
+				<p>
+					Aplicaciones web modernas y rápidas utilizando Flask para
+					backend y Astro para frontend estático.
+				</p>
+			</div>
+			<div class="service-card glass">
+				<div class="service-icon">
+					<div class="icon-circle">AND</div>
 				</div>
 				<h3>Desarrollo de Aplicaciones Android</h3>
-				<p>Aplicaciones móviles nativas para Android utilizando Kotlin con arquitecturas modernas y mejores prácticas.</p>
+				<p>
+					Aplicaciones móviles nativas para Android utilizando Kotlin
+					con arquitecturas modernas y mejores prácticas.
+				</p>
 			</div>
 			<div class="service-card glass">
-				<div class="service-icon">📡</div>
+				<div class="service-icon">
+					<div class="icon-circle">IoT</div>
+				</div>
 				<h3>IoT y Proyectos Ambientales</h3>
-				<p>Soluciones de Internet de las Cosas para monitoreo ambiental, automatización de dispositivos y sostenibilidad.</p>
+				<p>
+					Soluciones de Internet de las Cosas para monitoreo
+					ambiental, automatización de dispositivos y sostenibilidad.
+				</p>
 			</div>
 			<div class="service-card glass">
-				<div class="service-icon">🔧</div>
+				<div class="service-icon">
+					<div class="icon-circle">MEC</div>
+				</div>
 				<h3>Mecatrónica</h3>
-				<p>Integración de sistemas mecánicos, electrónicos y de control para automatización.</p>
+				<p>
+					Integración de sistemas mecánicos, electrónicos y de control
+					para automatización.
+				</p>
 			</div>
 			<div class="service-card glass">
-				<div class="service-icon">🌿</div>
+				<div class="service-icon">
+					<div class="icon-circle">ENV</div>
+				</div>
 				<h3>Ciencias Ambientales</h3>
-				<p>Consultoría y desarrollo de soluciones tecnológicas para sostenibilidad ambiental.</p>
+				<p>
+					Consultoría y desarrollo de soluciones tecnológicas para
+					sostenibilidad ambiental.
+				</p>
 			</div>
 		</div>
 	</div>
@@ -45,179 +73,111 @@ import AndroidIcon from './AndroidIcon.astro';
 <style>
 	.services {
 		padding: 6rem 2rem;
-		background: rgba(0, 0, 0, 0.2);
+		background: var(--bg-color);
 		position: relative;
-	}
-
-	.services::before {
-		content: '';
-		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: 0;
-		background: 
-			radial-gradient(circle at 20% 20%, rgba(0, 245, 255, 0.05) 0%, transparent 50%),
-			radial-gradient(circle at 80% 80%, rgba(0, 255, 136, 0.05) 0%, transparent 50%);
-		pointer-events: none;
 	}
 
 	.container {
 		max-width: 1200px;
 		margin: 0 auto;
-		position: relative;
-		z-index: 1;
 	}
 
 	.section-title {
-		font-family: 'Orbitron', monospace;
+		font-family: var(--font-main);
 		font-size: 3rem;
-		font-weight: 900;
+		font-weight: 700;
 		text-align: center;
-		margin-bottom: 3rem;
-		background: linear-gradient(45deg, var(--neon-magenta), var(--neon-blue));
-		background-size: 200% 200%;
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-clip: text;
-		animation: gradient-flow 3s ease infinite;
-		filter: drop-shadow(0 0 15px rgba(0, 245, 255, 0.4));
-		position: relative;
-	}
-
-	.section-title::after {
-		content: '';
-		position: absolute;
-		bottom: -15px;
-		left: 50%;
-		transform: translateX(-50%);
-		width: 120px;
-		height: 3px;
-		background: linear-gradient(45deg, var(--neon-magenta), var(--neon-blue));
-		border-radius: 2px;
-		animation: gradient-flow 3s ease infinite;
+		margin-bottom: 4rem;
+		color: var(--text-primary);
+		letter-spacing: -0.02em;
 	}
 
 	.services-grid {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-		gap: 2.5rem;
-		margin-top: 4rem;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: 2rem;
 	}
 
 	.service-card {
-		background: var(--glass-bg);
-		backdrop-filter: blur(20px) saturate(180%);
-		border: 1px solid var(--glass-border);
-		border-radius: 20px;
+		/* Glass effect inherited from global .glass */
 		padding: 2.5rem;
-		text-align: center;
-		transition: all 0.4s ease;
-		position: relative;
-		overflow: hidden;
-	}
-
-	.service-card::before {
-		content: '';
-		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-		height: 2px;
-		background: linear-gradient(90deg, var(--neon-magenta), var(--neon-blue));
-		opacity: 0;
-		transition: opacity 0.3s ease;
-	}
-
-	.service-card::after {
-		content: '';
-		position: absolute;
-		top: 0;
-		left: -100%;
-		width: 100%;
-		height: 100%;
-		background: linear-gradient(90deg, transparent, rgba(0, 245, 255, 0.1), transparent);
-		transition: left 0.6s ease;
-	}
-
-	.service-card:hover::before {
-		opacity: 1;
-	}
-
-	.service-card:hover::after {
-		left: 100%;
+		text-align: left;
+		transition: all 0.3s ease;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		background: var(--glass-bg); /* Ensure background is set */
 	}
 
 	.service-card:hover {
-		transform: translateY(-8px);
-		border-color: var(--cyber-cyan);
-		box-shadow: 
-			0 15px 40px rgba(0, 245, 255, 0.25),
-			0 0 30px rgba(0, 255, 136, 0.15);
+		transform: translateY(-5px);
+		box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+		border-color: var(--text-primary);
 	}
 
 	.service-icon {
-		font-size: 3.5rem;
 		margin-bottom: 1.5rem;
-		filter: drop-shadow(0 0 15px var(--cyber-cyan));
-		animation: float-icon 3s ease-in-out infinite;
+		color: var(--text-primary);
+		display: flex;
+		align-items: center;
+		justify-content: center;
 	}
 
-	@keyframes float-icon {
-		0%, 100% { transform: translateY(0px); }
-		50% { transform: translateY(-5px); }
+	.icon-circle {
+		width: 64px;
+		height: 64px;
+		border-radius: 50%;
+		border: 2px solid var(--text-primary);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-family: var(--font-main);
+		font-size: 0.75rem;
+		font-weight: 600;
+		letter-spacing: 0.05em;
+		color: var(--text-primary);
+		transition: all 0.3s ease;
+	}
+
+	.service-card:hover .icon-circle {
+		background: var(--text-primary);
+		color: var(--bg-color);
+		transform: scale(1.05);
 	}
 
 	.service-card h3 {
-		font-family: 'Exo 2', sans-serif;
-		font-size: 1.4rem;
+		font-family: var(--font-main);
+		font-size: 1.5rem;
 		font-weight: 600;
-		margin-bottom: 1.5rem;
+		margin-bottom: 1rem;
 		color: var(--text-primary);
-		text-shadow: 0 0 10px rgba(0, 245, 255, 0.3);
+		letter-spacing: -0.01em;
 	}
 
 	.service-card p {
 		color: var(--text-secondary);
-		line-height: 1.7;
+		line-height: 1.6;
 		font-size: 1rem;
-	}
-
-	@keyframes gradient-flow {
-		0%, 100% { background-position: 0% 50%; }
-		50% { background-position: 100% 50%; }
+		margin: 0;
 	}
 
 	@media (max-width: 768px) {
 		.services {
 			padding: 4rem 1rem;
 		}
-		
+
 		.section-title {
 			font-size: 2.2rem;
+			margin-bottom: 3rem;
 		}
-		
+
 		.services-grid {
 			grid-template-columns: 1fr;
-			gap: 2rem;
+			gap: 1.5rem;
 		}
 
 		.service-card {
 			padding: 2rem;
-		}
-	}
-
-	@media (max-width: 480px) {
-		.section-title {
-			font-size: 1.8rem;
-		}
-
-		.service-icon {
-			font-size: 3rem;
-		}
-
-		.service-card h3 {
-			font-size: 1.2rem;
 		}
 	}
 </style>

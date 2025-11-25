@@ -1,4 +1,5 @@
 ---
+
 ---
 
 <section id="inicio" class="hero">
@@ -6,16 +7,18 @@
 		<div class="hero-image">
 			<div class="image-frame">
 				<img src="/luis12.png" alt="Luis Guere" class="profile-img" />
-				<div class="frame-glow"></div>
 			</div>
 		</div>
-		<h1 class="hero-title" id="typewriter-title"></h1>
-		<h2 class="hero-subtitle">Especialista en Ingeniería de Software con Inteligencia Artificial</h2>
+		<h1 class="hero-title">Luis Guere</h1>
+		<h2 class="hero-subtitle">
+			Especialista en Ingeniería de Software con Inteligencia Artificial
+		</h2>
 		<p class="hero-description">
-			Desarrollando tecnología que impacta positivamente en el entorno, explorando la intersección entre IA, software y mecatrónica.
+			Desarrollando tecnología que impacta positivamente en el entorno,
+			explorando la intersección entre IA, software y mecatrónica.
 		</p>
 		<div class="hero-actions">
-			<a href="#contacto" class="cyber-button primary">Contactar</a>
+			<a href="#contacto" class="apple-button">Contactar</a>
 		</div>
 	</div>
 </section>
@@ -27,31 +30,15 @@
 		align-items: center;
 		justify-content: center;
 		padding: 2rem;
-		padding-top: 8rem;
-		background: linear-gradient(135deg, 
-			rgba(0, 245, 255, 0.12) 0%, 
-			rgba(255, 0, 230, 0.08) 50%, 
-			rgba(0, 162, 255, 0.1) 100%);
+		padding-top: 6rem;
+		background: var(--bg-color);
 		position: relative;
 		overflow: hidden;
 	}
 
-	.hero::before {
-		content: '';
-		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: 0;
-		background-image: 
-			radial-gradient(circle at 25% 75%, rgba(0, 245, 255, 0.08) 0%, transparent 60%),
-			radial-gradient(circle at 75% 25%, rgba(255, 0, 230, 0.06) 0%, transparent 60%);
-		animation: float 8s ease-in-out infinite;
-	}
-
 	.hero-content {
 		text-align: center;
-		max-width: 900px;
+		max-width: 800px;
 		z-index: 1;
 		position: relative;
 	}
@@ -64,266 +51,101 @@
 
 	.image-frame {
 		position: relative;
-		width: 280px;
-		height: 280px;
+		width: 200px;
+		height: 200px;
 		margin: 0 auto;
-		border-radius: 50%;
-		background: linear-gradient(45deg, var(--neon-magenta), var(--neon-blue));
-		padding: 4px;
-		animation: rotate 20s linear infinite;
+		border-radius: 50%; /* Circular profile image */
+		overflow: hidden;
+		box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
 	}
 
 	.profile-img {
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
-		border-radius: 50%;
-		position: relative;
-		z-index: 2;
+		border-radius: 50%; /* Circular profile image */
+		filter: grayscale(100%); /* Black and white aesthetic for image */
+		transition:
+			filter 0.5s ease,
+			transform 0.5s ease;
 	}
 
-	.frame-glow {
-		position: absolute;
-		top: -10px;
-		left: -10px;
-		right: -10px;
-		bottom: -10px;
-		border-radius: 50%;
-		background: linear-gradient(45deg, var(--neon-magenta), var(--neon-blue));
-		opacity: 0.3;
-		filter: blur(15px);
-		animation: pulse 3s ease-in-out infinite;
+	.profile-img:hover {
+		filter: grayscale(0%); /* Reveal color on hover */
+		transform: scale(1.05);
 	}
 
 	.hero-title {
-		font-family: 'Orbitron', monospace;
-		font-size: 4rem;
-		font-weight: 900;
-		margin-bottom: 1.5rem;
-		background: linear-gradient(45deg, var(--neon-magenta), var(--neon-blue));
-		background-size: 200% 200%;
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-clip: text;
-		animation: gradient-flow 3s ease infinite;
-		filter: drop-shadow(0 0 20px rgba(0, 245, 255, 0.4));
-	}
-
-	.hero-title::after {
-		content: '|';
-		animation: blink 1s infinite;
-	}
-
-	@keyframes blink {
-		0%, 50% { opacity: 1; }
-		51%, 100% { opacity: 0; }
+		font-family: var(--font-main);
+		font-size: 4.5rem;
+		font-weight: 700;
+		margin-bottom: 1rem;
+		color: var(--text-primary);
+		letter-spacing: -0.03em;
+		line-height: 1.1;
 	}
 
 	.hero-subtitle {
-		font-family: 'Exo 2', sans-serif;
-		font-size: 1.6rem;
+		font-family: var(--font-main);
+		font-size: 1.5rem;
 		font-weight: 400;
 		margin-bottom: 2rem;
 		color: var(--text-secondary);
 		line-height: 1.4;
-		text-shadow: 0 0 10px rgba(0, 245, 255, 0.2);
+		max-width: 600px;
+		margin-left: auto;
+		margin-right: auto;
 	}
 
 	.hero-description {
-		font-size: 1.2rem;
+		font-size: 1.1rem;
 		color: var(--text-secondary);
-		line-height: 1.7;
-		max-width: 650px;
+		line-height: 1.6;
+		max-width: 600px;
 		margin: 0 auto 3rem auto;
-		opacity: 0.9;
 	}
 
 	.hero-actions {
 		display: flex;
-		gap: 2rem;
+		gap: 1.5rem;
 		justify-content: center;
-		margin-top: 3rem;
+		margin-top: 2rem;
 	}
 
-	.cyber-button {
+	.apple-button {
 		display: inline-flex;
 		align-items: center;
 		justify-content: center;
 		padding: 1rem 2.5rem;
-		font-family: 'Exo 2', sans-serif;
-		font-weight: 600;
+		font-family: var(--font-main);
+		font-weight: 500;
 		font-size: 1rem;
 		text-decoration: none;
-		border-radius: 50px;
+		border-radius: 0; /* Sharp corners */
 		transition: all 0.3s ease;
-		position: relative;
-		overflow: hidden;
-		background: linear-gradient(45deg, var(--neon-magenta), var(--neon-blue));
-		color: white;
-		border: none;
-		box-shadow: 0 4px 15px rgba(0, 162, 255, 0.3);
-		text-transform: uppercase;
-		letter-spacing: 1px;
+		background: var(--text-primary);
+		color: var(--bg-color);
+		border: 1px solid var(--text-primary);
 	}
 
-	.cyber-button::before {
-		content: '';
-		position: absolute;
-		top: 0;
-		left: -100%;
-		width: 100%;
-		height: 100%;
-		background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-		transition: left 0.5s ease;
-	}
-
-	.cyber-button:hover::before {
-		left: 100%;
-	}
-
-	.cyber-button:hover {
+	.apple-button:hover {
+		background: transparent;
+		color: var(--text-primary);
 		transform: translateY(-2px);
-		box-shadow: 0 8px 25px rgba(0, 162, 255, 0.4);
-		filter: brightness(1.1);
-	}
-
-	@keyframes rotate {
-		from { transform: rotate(0deg); }
-		to { transform: rotate(360deg); }
-	}
-
-	@keyframes pulse {
-		0%, 100% {
-			opacity: 0.3;
-			transform: scale(1);
-		}
-		50% {
-			opacity: 0.6;
-			transform: scale(1.05);
-		}
-	}
-
-	@keyframes gradient-flow {
-		0%, 100% { background-position: 0% 50%; }
-		50% { background-position: 100% 50%; }
-	}
-
-	@keyframes float {
-		0%, 100% {
-			transform: translateY(0px) rotate(0deg);
-		}
-		50% {
-			transform: translateY(-15px) rotate(1deg);
-		}
 	}
 
 	@media (max-width: 768px) {
-		.hero {
-			padding: 1rem;
-			padding-top: 8rem;
-		}
-
 		.hero-title {
-			font-size: 2.8rem;
-		}
-		
-		.hero-subtitle {
-			font-size: 1.3rem;
-		}
-		
-		.image-frame {
-			width: 220px;
-			height: 220px;
-		}
-
-		.hero-description {
-			font-size: 1.1rem;
-		}
-
-		.hero-actions {
-			flex-direction: column;
-			gap: 1.5rem;
-			align-items: center;
-		}
-
-		.cyber-button {
-			padding: 0.9rem 2rem;
-			font-size: 0.9rem;
-		}
-	}
-
-	@media (max-width: 1024px) {
-		.hero-title {
-			font-size: 3.2rem;
+			font-size: 3rem;
 		}
 
 		.hero-subtitle {
-			font-size: 1.4rem;
+			font-size: 1.2rem;
 		}
 
 		.image-frame {
-			width: 240px;
-			height: 240px;
-		}
-
-		.hero-description {
-			font-size: 1.1rem;
-			max-width: 600px;
-		}
-
-		.hero-actions {
-			gap: 1.5rem;
-		}
-
-		.cyber-button {
-			padding: 0.95rem 2.2rem;
-			font-size: 0.95rem;
-		}
-	}
-
-	@media (max-width: 480px) {
-		.hero {
-			padding-top: 7rem;
-		}
-
-		.hero-title {
-			font-size: 2.2rem;
-		}
-		
-		.hero-subtitle {
-			font-size: 1.1rem;
-		}
-		
-		.image-frame {
-			width: 180px;
-			height: 180px;
-		}
-
-		.hero-actions {
-			gap: 1rem;
-		}
-
-		.cyber-button {
-			padding: 0.8rem 1.8rem;
-			font-size: 0.85rem;
+			width: 160px;
+			height: 160px;
 		}
 	}
 </style>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const text = "Luis Guere";
-    const element = document.getElementById('typewriter-title');
-    let i = 0;
-
-    function typeWriter() {
-        if (i < text.length) {
-            element.innerHTML = text.substring(0, i + 1);
-            i++;
-            setTimeout(typeWriter, 150);
-        }
-    }
-
-    typeWriter();
-});
-</script>

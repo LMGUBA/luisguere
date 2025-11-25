@@ -1,5 +1,14 @@
 // Safe dynamic effects - no problematic elements
 document.addEventListener('DOMContentLoaded', () => {
+  // Force scroll to top on page load
+  if (window.location.hash === '' || window.location.hash === '#') {
+    window.scrollTo(0, 0);
+    // Also handle history state
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+  }
+
   // Typewriter effect for hero title
   const typewriterTitle = document.getElementById('typewriter-title');
   if (typewriterTitle) {
@@ -7,13 +16,13 @@ document.addEventListener('DOMContentLoaded', () => {
     let isDeleting = false;
     let currentText = '';
     let charIndex = 0;
-    
+
     function typeWriter() {
       if (!isDeleting) {
         // Typing
         currentText = text.substring(0, charIndex + 1);
         charIndex++;
-        
+
         if (charIndex === text.length) {
           // Pause before deleting
           setTimeout(() => {
@@ -24,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Deleting
         currentText = text.substring(0, charIndex - 1);
         charIndex--;
-        
+
         if (charIndex === 0) {
           isDeleting = false;
           // Pause before typing again
@@ -34,17 +43,17 @@ document.addEventListener('DOMContentLoaded', () => {
           return;
         }
       }
-      
+
       typewriterTitle.textContent = currentText;
-      
+
       // Add cursor effect
-      typewriterTitle.style.borderRight = '3px solid var(--cyber-cyan)';
-      
+      typewriterTitle.style.borderRight = '3px solid var(--text-primary)';
+
       // Different speeds for typing and deleting
       const speed = isDeleting ? 100 : 150;
       setTimeout(typeWriter, speed);
     }
-    
+
     // Start the effect after a short delay
     setTimeout(() => {
       typewriterTitle.textContent = '';
@@ -152,7 +161,7 @@ style.textContent = `
   }
 
   @keyframes blink-cursor {
-    0%, 50% { border-right-color: var(--cyber-cyan); }
+    0%, 50% { border-right-color: var(--text-primary); }
     51%, 100% { border-right-color: transparent; }
   }
 `;
