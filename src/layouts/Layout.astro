@@ -10,14 +10,134 @@ const { title } = Astro.props;
 <html lang="es">
 	<head>
 		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<!-- SEO Meta Tags -->
+		<title>
+			{title} | Ingeniero de Software con Inteligencia Artificial en Huancayo
+			y Pucallpa, Perú
+		</title>
 		<meta
 			name="description"
-			content="Portafolio de Luis Guere, Especialista en Ingeniería de Software con Inteligencia Artificial"
+			content="Luis Miguel Guere Balvín - Ingeniero de Software especializado en Inteligencia Artificial en Huancayo, Pucallpa y Perú. Desarrollo de soluciones tecnológicas innovadoras con IA, Machine Learning y desarrollo web. Experto en ingeniería de software, mecatrónica y ciencias ambientales."
 		/>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta
+			name="keywords"
+			content="ingeniero de software, inteligencia artificial, Huancayo, Pucallpa, Perú, IA, machine learning, desarrollo web, desarrollador, software engineer, AI engineer, SENATI, Universidad Continental, ingeniero mecatrónico, ciencias ambientales, developer Peru, ingeniero software Peru, desarrollador IA Peru, software Huancayo, IA Pucallpa, tecnología Peru, programador Peru, Luis Guere, Luis Miguel Guere Balvín"
+		/>
+		<meta name="author" content="Luis Miguel Guere Balvín" />
+		<meta name="robots" content="index, follow" />
+		<meta name="language" content="Spanish" />
+		<meta name="geo.region" content="PE" />
+		<meta name="geo.placename" content="Huancayo, Pucallpa, Peru" />
+		<meta name="geo.position" content="-12.0653;-75.2049" />
+		<meta name="ICBM" content="-12.0653, -75.2049" />
+
+		<!-- Open Graph Meta Tags -->
+		<meta property="og:type" content="website" />
+		<meta
+			property="og:title"
+			content="{title} | Ingeniero de Software con IA en Huancayo y Pucallpa"
+		/>
+		<meta
+			property="og:description"
+			content="Luis Miguel Guere Balvín - Especialista en Ingeniería de Software con Inteligencia Artificial. Desarrollo de soluciones tecnológicas innovadoras en Huancayo, Pucallpa y Perú."
+		/>
+		<meta property="og:url" content="https://luisguere.com" />
+		<meta property="og:image" content="https://luisguere.com/luis12.png" />
+		<meta property="og:locale" content="es_PE" />
+		<meta
+			property="og:site_name"
+			content="Luis Guere - Ingeniero de Software con IA"
+		/>
+
+		<!-- Twitter Card Meta Tags -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta
+			name="twitter:title"
+			content="{title} | Ingeniero de Software con IA en Huancayo y Pucallpa"
+		/>
+		<meta
+			name="twitter:description"
+			content="Luis Miguel Guere Balvín - Especialista en Ingeniería de Software con Inteligencia Artificial en Perú"
+		/>
+		<meta name="twitter:image" content="https://luisguere.com/luis12.png" />
+
+		<!-- Canonical URL -->
+		<link rel="canonical" href="https://luisguere.com" />
+
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
+
+		<!-- Schema.org JSON-LD for Professional Person -->
+		<script type="application/ld+json">
+			{
+				"@context": "https://schema.org",
+				"@type": "Person",
+				"name": "Luis Miguel Guere Balvín",
+				"jobTitle": "Ingeniero de Software con Inteligencia Artificial",
+				"description": "Especialista en Ingeniería de Software con Inteligencia Artificial, con formación en mecatrónica y ciencias ambientales. Desarrollo de soluciones tecnológicas innovadoras.",
+				"url": "https://luisguere.com",
+				"image": "https://luisguere.com/luis12.png",
+				"address": [
+					{
+						"@type": "PostalAddress",
+						"addressLocality": "Huancayo",
+						"addressRegion": "Junín",
+						"addressCountry": "PE"
+					},
+					{
+						"@type": "PostalAddress",
+						"addressLocality": "Pucallpa",
+						"addressRegion": "Ucayali",
+						"addressCountry": "PE"
+					}
+				],
+				"alumniOf": [
+					{
+						"@type": "EducationalOrganization",
+						"name": "SENATI",
+						"description": "Ingeniería de Software con Inteligencia Artificial"
+					},
+					{
+						"@type": "EducationalOrganization",
+						"name": "Universidad Continental",
+						"address": {
+							"@type": "PostalAddress",
+							"addressLocality": "Huancayo",
+							"addressCountry": "PE"
+						},
+						"description": "Ingeniería Mecatrónica"
+					},
+					{
+						"@type": "EducationalOrganization",
+						"name": "Universidad Nacional de Ucayali",
+						"address": {
+							"@type": "PostalAddress",
+							"addressLocality": "Pucallpa",
+							"addressCountry": "PE"
+						},
+						"description": "Ciencias Ambientales"
+					}
+				],
+				"knowsAbout": [
+					"Inteligencia Artificial",
+					"Machine Learning",
+					"Ingeniería de Software",
+					"Desarrollo Web",
+					"Mecatrónica",
+					"Ciencias Ambientales",
+					"Python",
+					"JavaScript",
+					"React",
+					"Node.js"
+				],
+				"sameAs": [
+					"https://linkedin.com/in/luisguere",
+					"https://github.com/luisguere"
+				]
+			}
+		</script>
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
